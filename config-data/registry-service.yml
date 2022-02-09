@@ -1,0 +1,13 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    # false significa a sí mismo como un servidor, no como un cliente
+    registerWithEureka: false
+    # no es necesasrio registrarse
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
